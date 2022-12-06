@@ -11,6 +11,8 @@
 		B21315A1293F74AC000C8AFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21315A0293F74AC000C8AFE /* ContentView.swift */; };
 		B21315A3293F74AD000C8AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21315A2293F74AD000C8AFE /* Assets.xcassets */; };
 		B21315A7293F74AD000C8AFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21315A6293F74AD000C8AFE /* Preview Assets.xcassets */; };
+		B21315AE293F7541000C8AFE /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B21315AD293F7541000C8AFE /* Products.storekit */; };
+		B21315B0293F80A2000C8AFE /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21315AF293F80A2000C8AFE /* Products.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		B21315A2293F74AD000C8AFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21315A4293F74AD000C8AFE /* StoreDemo1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StoreDemo1.entitlements; sourceTree = "<group>"; };
 		B21315A6293F74AD000C8AFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B21315AD293F7541000C8AFE /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		B21315AF293F80A2000C8AFE /* Products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				B21315A0293F74AC000C8AFE /* ContentView.swift */,
 				B21315A2293F74AD000C8AFE /* Assets.xcassets */,
 				B21315A4293F74AD000C8AFE /* StoreDemo1.entitlements */,
+				B21315AF293F80A2000C8AFE /* Products.plist */,
+				B21315AD293F7541000C8AFE /* Products.storekit */,
 				B21315A5293F74AD000C8AFE /* Preview Content */,
 			);
 			path = StoreDemo1;
@@ -127,7 +133,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21315B0293F80A2000C8AFE /* Products.plist in Resources */,
 				B21315A7293F74AD000C8AFE /* Preview Assets.xcassets in Resources */,
+				B21315AE293F7541000C8AFE /* Products.storekit in Resources */,
 				B21315A3293F74AD000C8AFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
