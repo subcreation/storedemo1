@@ -53,7 +53,13 @@ class Store: ObservableObject {
         updateListenerTask = listenForTransactions()
         
         // request subscription asynchronously to fill them
-        // ...
+        Task {
+            // During store initialization, request products from the App Store.
+            await requestProducts()
+            
+            // Deliver products that the customer purchases.
+            await updateCustomerProductStatus()
+        }
     }
     
     deinit {
@@ -69,11 +75,37 @@ class Store: ObservableObject {
                     
                     // Deliver products to the user.
                     await self.updateCustomerProductStatus()
+                    
+                    // Always finish a transaction
+                    await transaction.finish()
+                } catch {
+                    // StoreKit has a transaction that fails verification. Don't deliver content to the user.
+                    print("Transaction failed verification")
                 }
             }
         }
     }
     
+    @MainActor
+    func requestProducts() async {
+        do {
+            // Request products from the App Store using the identifiers that the Products.plist file defines.
+            let storeProducts = try await Product.products(for: productIdToEmoji.keys)
+            
+            var newSubscriptions: [Product] = []
+            
+            // Filter to just subscriptions.
+            for product in storeProducts {
+                if product.type == .autoRenewable {
+                    newSubscriptions.append(product)
+                }
+            }
+            
+            subscriptions = sortByPrice(newSubscriptions)
+        } catch {
+            print("Failed product request from the App Store server: \(error)")
+        }
+    }
     
     func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         // Check whether the JWS passes StoreKit verification.
@@ -107,5 +139,9 @@ class Store: ObservableObject {
                 print()
             }
         }
+    }
+    
+    func sortByPrice(_ products: [Product]) -> [Product] {
+        products.sorted(by: { return $0.price < $1.price })
     }
 }
