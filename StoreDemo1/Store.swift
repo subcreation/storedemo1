@@ -144,4 +144,16 @@ class Store: ObservableObject {
     func sortByPrice(_ products: [Product]) -> [Product] {
         products.sorted(by: { return $0.price < $1.price })
     }
+    
+    // Get a subscription's level of service using the product ID.
+    func tier(for productId: String) -> SubscriptionTier {
+        switch productId {
+        case "subscription.ideatier":
+            return .idea
+        case "subscription.visualtier":
+            return .visual
+        default:
+            return .none
+        }
+    }
 }
