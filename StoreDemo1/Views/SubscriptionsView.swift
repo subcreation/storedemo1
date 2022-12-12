@@ -1,76 +1,76 @@
 //
-//  ContentView.swift
+//  SubscriptionsView.swift
 //  StoreDemo1
 //
-//  Created by Nathanael Roberton on 12/6/22.
+//  Created by Nathanael Roberton on 12/12/22.
 //
 
 import StoreKit
 import SwiftUI
 
-struct ContentView: View {
-    @StateObject var store: Store = Store()
-    
+struct SubscriptionsView: View {
+    @EnvironmentObject var store: Store
+
     @State var currentSubscription: Product?
     @State var status: Product.SubscriptionInfo.Status?
-    
+
     var availableSubscriptions: [Product] {
         store.subscriptions.filter { $0.id != currentSubscription?.id }
     }
-    
+
     var body: some View {
-        NavigationView {
-            List {
-                Section("Subscription") {
-                    if !store.purchasedSubscriptions.isEmpty {
-                        ForEach(store.purchasedSubscriptions) { product in
-                            NavigationLink {
-                                ProductDetailView(product: product)
-                            } label: {
-                                ListCellView(product: product, purchasingEnabled: false)
-                            }
-                        }
-                        
-                    } else {
-                        if let subscriptionGroupStatus = store.subscriptionGroupStatus {
-                            if subscriptionGroupStatus == .expired || subscriptionGroupStatus == .revoked {
-                                Text("Welcome Back! \nHead over to the shop to get started!")
-                            } else if subscriptionGroupStatus == .inBillingRetryPeriod {
-                                //The best practice for subscriptions in the billing retry state is to provide a deep link
-                                //from your app to https://apps.apple.com/account/billing.
-                                Text("Please verify your billing details.")
-                            }
-                        } else {
-                            Text("You don't own any subscriptions. \nHead over to the shop to get started!")
-                        }
+        Group {
+            if let currentSubscription = currentSubscription {
+                Section("My Subscription") {
+                   ListCellView(product: currentSubscription, purchasingEnabled: false)
+
+                    if let status = status {
+                        StatusInfoView(product: currentSubscription,
+                                        status: status)
                     }
                 }
-                
-                NavigationLink {
-                    StoreView()
-                } label: {
-                    Label("Shop", systemImage: "cart")
-                }
-                .foregroundColor(.white)
-                .listRowBackground(Color.blue)
+                .listStyle(GroupedListStyle())
             }
-            .navigationTitle("StoreKit Demo")
+
+            Section("Navigation: Auto-Renewable Subscription") {
+                ForEach(availableSubscriptions) { product in
+                    ListCellView(product: product)
+                }
+            }
+            .listStyle(GroupedListStyle())
         }
-        .environmentObject(store)
+        .onAppear {
+            Task {
+                //When this view appears, get the latest subscription status.
+                await updateSubscriptionStatus()
+            }
+        }
+        .onChange(of: store.purchasedSubscriptions) { _ in
+            Task {
+                //When `purchasedSubscriptions` changes, get the latest subscription status.
+                await updateSubscriptionStatus()
+            }
+        }
     }
-    
+
     @MainActor
     func updateSubscriptionStatus() async {
         do {
+            //This app has only one subscription group, so products in the subscriptions
+            //array all belong to the same group. The statuses that
+            //`product.subscription.status` returns apply to the entire subscription group.
             guard let product = store.subscriptions.first,
                   let statuses = try await product.subscription?.status else {
                 return
             }
-            
+
             var highestStatus: Product.SubscriptionInfo.Status? = nil
             var highestProduct: Product? = nil
-            
-            // Iterate through statuses to find the highest level of service that isn't expired (which they may have through Family Sharing)
+
+            //Iterate through `statuses` for this subscription group and find
+            //the `Status` with the highest level of service that isn't
+            //in an expired or revoked state. For example, a customer may be subscribed to the
+            //same product with different levels of service through Family Sharing.
             for status in statuses {
                 switch status.state {
                 case .expired, .revoked:

@@ -13,8 +13,14 @@
 		B21315A7293F74AD000C8AFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21315A6293F74AD000C8AFE /* Preview Assets.xcassets */; };
 		B21315AE293F7541000C8AFE /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B21315AD293F7541000C8AFE /* Products.storekit */; };
 		B21315B0293F80A2000C8AFE /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21315AF293F80A2000C8AFE /* Products.plist */; };
-		B21315B3293F8677000C8AFE /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21315B2293F8677000C8AFE /* SubscriptionView.swift */; };
 		B21315B5293F86F1000C8AFE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21315B4293F86F1000C8AFE /* Store.swift */; };
+		B21315B82943C8A1000C8AFE /* SampleCode.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */; };
+		B2DB4D8829475ADA00B8C9C4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D8729475ADA00B8C9C4 /* ProductDetailView.swift */; };
+		B2DB4D8A29475BDF00B8C9C4 /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D8929475BDF00B8C9C4 /* ListCellView.swift */; };
+		B2DB4D8C29475C1100B8C9C4 /* BuyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D8B29475C1100B8C9C4 /* BuyButtonStyle.swift */; };
+		B2DB4D8E29475F1500B8C9C4 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D8D29475F1500B8C9C4 /* StoreView.swift */; };
+		B2DB4D9029475F4300B8C9C4 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D8F29475F4300B8C9C4 /* SubscriptionsView.swift */; };
+		B2DB4D9229475F7000B8C9C4 /* StatusInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB4D9129475F7000B8C9C4 /* StatusInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +32,14 @@
 		B21315A6293F74AD000C8AFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B21315AD293F7541000C8AFE /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		B21315AF293F80A2000C8AFE /* Products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
-		B21315B2293F8677000C8AFE /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		B21315B4293F86F1000C8AFE /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
+		B2DB4D8729475ADA00B8C9C4 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		B2DB4D8929475BDF00B8C9C4 /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
+		B2DB4D8B29475C1100B8C9C4 /* BuyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonStyle.swift; sourceTree = "<group>"; };
+		B2DB4D8D29475F1500B8C9C4 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		B2DB4D8F29475F4300B8C9C4 /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
+		B2DB4D9129475F7000B8C9C4 /* StatusInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,7 @@
 				B21315A4293F74AD000C8AFE /* StoreDemo1.entitlements */,
 				B21315AF293F80A2000C8AFE /* Products.plist */,
 				B21315AD293F7541000C8AFE /* Products.storekit */,
+				B21315B62943C85E000C8AFE /* Configuration */,
 				B21315A5293F74AD000C8AFE /* Preview Content */,
 			);
 			path = StoreDemo1;
@@ -84,9 +97,22 @@
 			isa = PBXGroup;
 			children = (
 				B21315A0293F74AC000C8AFE /* ContentView.swift */,
-				B21315B2293F8677000C8AFE /* SubscriptionView.swift */,
+				B2DB4D8729475ADA00B8C9C4 /* ProductDetailView.swift */,
+				B2DB4D8929475BDF00B8C9C4 /* ListCellView.swift */,
+				B2DB4D8B29475C1100B8C9C4 /* BuyButtonStyle.swift */,
+				B2DB4D8D29475F1500B8C9C4 /* StoreView.swift */,
+				B2DB4D8F29475F4300B8C9C4 /* SubscriptionsView.swift */,
+				B2DB4D9129475F7000B8C9C4 /* StatusInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B21315B62943C85E000C8AFE /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,7 +141,7 @@
 		B2131593293F74AC000C8AFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
@@ -150,6 +176,7 @@
 				B21315B0293F80A2000C8AFE /* Products.plist in Resources */,
 				B21315A7293F74AD000C8AFE /* Preview Assets.xcassets in Resources */,
 				B21315AE293F7541000C8AFE /* Products.storekit in Resources */,
+				B21315B82943C8A1000C8AFE /* SampleCode.xcconfig in Resources */,
 				B21315A3293F74AD000C8AFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,10 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DB4D8C29475C1100B8C9C4 /* BuyButtonStyle.swift in Sources */,
 				B21315A1293F74AC000C8AFE /* ContentView.swift in Sources */,
+				B2DB4D8829475ADA00B8C9C4 /* ProductDetailView.swift in Sources */,
 				B213159F293F74AC000C8AFE /* StoreDemo1App.swift in Sources */,
-				B21315B3293F8677000C8AFE /* SubscriptionView.swift in Sources */,
+				B2DB4D9229475F7000B8C9C4 /* StatusInfoView.swift in Sources */,
 				B21315B5293F86F1000C8AFE /* Store.swift in Sources */,
+				B2DB4D9029475F4300B8C9C4 /* SubscriptionsView.swift in Sources */,
+				B2DB4D8E29475F1500B8C9C4 /* StoreView.swift in Sources */,
+				B2DB4D8A29475BDF00B8C9C4 /* ListCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +205,7 @@
 /* Begin XCBuildConfiguration section */
 		B21315A8293F74AD000C8AFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -221,6 +254,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -231,6 +266,7 @@
 		};
 		B21315A9293F74AD000C8AFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -273,6 +309,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -282,6 +320,7 @@
 		};
 		B21315AB293F74AD000C8AFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,7 +342,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -320,6 +359,7 @@
 		};
 		B21315AC293F74AD000C8AFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21315B72943C8A1000C8AFE /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,7 +381,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;

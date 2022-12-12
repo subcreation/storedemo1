@@ -1,0 +1,11 @@
+//
+//  SampleCode.xcconfig
+//  StoreDemo1
+//
+//  Created by Nathanael Roberton on 12/9/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SAMPLE_CODE_DISAMBIGUATOR=${DEVELOPMENT_TEAM}
